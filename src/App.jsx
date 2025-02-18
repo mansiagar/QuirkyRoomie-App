@@ -1,11 +1,19 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Complaints from "./Pages/Complaints";
+import Navbar from "./Component/Navbar";
 
 const App = () => {
   return (
     <div>
-      <Box>
-        <Heading>Quirky Roomie </Heading>
-      </Box>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/complaint" element={<Complaints />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 };
